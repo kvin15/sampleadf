@@ -15,8 +15,143 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Film",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Film",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Genre",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Genre",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Lead Studio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LeadStudio",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Audience score pct",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Audiencescorepct",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Profitability",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Profitability",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Rotten Tomatoes pct",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RottenTomatoespct",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Worldwide Gross",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "WorldwideGross",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Year",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "vinkadfdemomoviescsvforparquetsrc",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "vinkadfdemoparquetdatasetsink",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
