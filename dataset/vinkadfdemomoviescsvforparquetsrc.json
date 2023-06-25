@@ -1,0 +1,24 @@
+{
+	"name": "vinkadfdemomoviescsvforparquetsrc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vinkadflinkservicedemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "movies_for_parquet.csv",
+				"folderPath": "movies",
+				"container": "testadfsrc"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
