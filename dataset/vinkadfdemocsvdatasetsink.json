@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "movies_target1.csv",
+				"fileName": "movies.csv",
 				"folderPath": "target",
 				"fileSystem": "vinkadfdatalakecontainerdemo1"
 			},
