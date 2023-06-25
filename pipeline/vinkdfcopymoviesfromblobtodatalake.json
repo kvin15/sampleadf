@@ -27,15 +27,13 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "ParquetSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings",
 							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".csv"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -56,7 +54,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "vinkadfdemocsvdatasetsink",
+						"referenceName": "vinkadfdemoparquetdatasetsink",
 						"type": "DatasetReference"
 					}
 				]
