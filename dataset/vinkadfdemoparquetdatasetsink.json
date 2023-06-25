@@ -1,0 +1,21 @@
+{
+	"name": "vinkadfdemoparquetdatasetsink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vinkadfdatalakelinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "movies.parquet",
+				"folderPath": "target",
+				"fileSystem": "vinkadfdatalakecontainerdemo1"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
