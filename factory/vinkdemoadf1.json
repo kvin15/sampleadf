@@ -1,0 +1,9 @@
+{
+	"name": "vinkdemoadf1",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c9150883-8bc1-4226-a3d6-1c37a99371bc",
+		"tenantId": "cfa37f43-0314-44e5-a6e4-2e743bd7f0e5"
+	}
+}
